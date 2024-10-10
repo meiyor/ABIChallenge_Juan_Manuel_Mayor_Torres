@@ -10,6 +10,7 @@ class Item(Base):
     date = Column(String, index=True)
     username = Column(String, index=True)
     model = Column(String, index=True)
+    input_file_name = Column(String, index=True)
     prediction = Column(PickleType, nullable=False)
     prediction_probability = Column(PickleType, nullable=False)
     explainability_file = Column(String, index=True)

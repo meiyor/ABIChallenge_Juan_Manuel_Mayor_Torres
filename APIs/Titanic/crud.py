@@ -18,6 +18,7 @@ def create_item(db: Session, item: schemas_database.ItemCreate):
         username=item.username,
         code=item.code,
         date=item.date,
+        input_file_name=item.input_file_name,
         model=item.model,
         prediction=item.prediction,
         prediction_probability=item.prediction_probability,

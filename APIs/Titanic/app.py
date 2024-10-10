@@ -188,6 +188,7 @@ def post_form(
             item.date = time_now
             item.username = form_data.username
             item.code = code_str
+            item.input_file_name = form_data.file.filename
 
             # model name definition
             if int(form_data.select_model) == 0:

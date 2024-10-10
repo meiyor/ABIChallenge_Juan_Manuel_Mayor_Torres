@@ -6,15 +6,17 @@ services:
             - "8000:8000"
         depends_on:
             - backend
+        volumes:
+            - ./mount/results/:/app/results/
+            - /etc/timezone:/etc/timezone:ro
+            - /etc/localtime:/etc/localtime:ro
+            - ./ids.txt:/app/ids.txt
+        entrypoint: ["/bin/sh", "./copy_values.sh"]
 
     backend:
         image: postgres
         volumes:
-            - /var/lib/postgresql/16/main/:/var/lib/postgresql/data/
-            - ./results/:/app/results/
-            - /etc/timezone:/etc/timezone:ro
-            - /etc/localtime:/etc/localtime:ro
-            - ./ids.txt:/app/ids.txt
+            - ./mount/postgres/:/var/lib/postgresql/data/
         environment:
             POSTGRES_USER: postgres
             POSTGRES_PASSWORD: DataBase

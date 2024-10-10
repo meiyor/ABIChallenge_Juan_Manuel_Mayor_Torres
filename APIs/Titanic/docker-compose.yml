@@ -12,11 +12,12 @@ services:
     backend:
         image: postgres
         volumes:
-            - /var/lib/postgresql/16/:/var/lib/postgresql/data/
+            - ./mounts/postgres/:/var/lib/postgresql/16/main/
+            - ./mounts/sockets/:/var/run/postgresql/
         environment:
             POSTGRES_USER: postgres
             POSTGRES_PASSWORD: DataBase
             POSTGRES_DB: apidb
         ports:
-            - "5432:5432"
+            - "5433:5433"
 

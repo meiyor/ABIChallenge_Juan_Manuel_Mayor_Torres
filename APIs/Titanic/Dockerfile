@@ -5,11 +5,14 @@ COPY ./requirements.txt /app
 
 WORKDIR /app
 
-RUN apt update && apt --assume-yes install postgresql gcc python3-dev musl-dev
+RUN apt update && apt --assume-yes install postgresql-16 gcc python3-dev musl-dev
 
-COPY /var/lib/postgresql/16/ /var/lib/postgresql/data/
+# COPY ./mounts/postgres/ /var/lib/postgresql/data/
 
 RUN pip3 install -r requirements.txt
 
-CMD python app.py
+RUN sed -i 's/peer/md5/g' /etc/postgresql/16/main/pg_hba.conf
 
+RUN service postgresql restart
+
+CMD ./container_launch.sh

@@ -219,6 +219,7 @@ def post_form(
                 shap_values_test = np.mean(shap_values_test, axis=2)
             shap.summary_plot(shap_values_test, X_test, show=False)
             plt.savefig('./results/explain/' + item.explainability_file)
+            plt.close('all')
 
             # save the results file as xls
             df_res = pd.DataFrame(

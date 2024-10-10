@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+    frontend:
+        build: .
+        ports:
+            - "8000:8000"
+        depends_on:
+            - backend
+
+    backend:
+        image: postgres
+        volumes:
+            - /var/lib/postgresql/16/main/:/var/lib/postgresql/data/
+            - ./results/:/app/results/
+            - /etc/timezone:/etc/timezone:ro
+            - /etc/localtime:/etc/localtime:ro
+            - ./ids.txt:/app/ids.txt
+        environment:
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: DataBase
+            POSTGRES_DB: apidb
+        ports:
+            - "5432:5433"

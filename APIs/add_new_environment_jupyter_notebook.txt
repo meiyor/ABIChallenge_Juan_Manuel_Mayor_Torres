@@ -1,0 +1,6 @@
+pip install ipython
+pip install ipykernel
+ipython kernel install --user --name=myenv
+python -m ipykernel install --user --name=myenv
+pip install bash_kernel
+python -m bash_kernel.install

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+   <link href="{{ url_for('static', path='/style.css') }}" rel="stylesheet">
+   <title>Titanic Test API</title>
+   
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+   </head>
+   <body>
+      <div class="wrapper">
+      <div id="ROC", class="block_results", style="text-align: left;">
+        <h1>ROC</h1>
+        <br>
+        <img src="data:image/jpeg;base64,{{ ROCImage | safe }}", onerror="this.onerror=null; this.src='../static/gray.jpg'">
+      </div>
+      <div id="form_div", class="block", style="text-align: center;">
+      <h1>Titanic Test API</h1>
+      <br>
+      <form method="post" action="/upload"  enctype="multipart/form-data">
+         <label for="username">Username:</label><br>
+         <input type="text" id="username" name="username"><br>
+         <label for="password">Password:</label><br>
+         <input type="password" id="password" name="password"><br>
+         <h3>Select Model:</h3>
+         <label>Logistic Regression</label>
+         <input type="radio" id="logreg" name="select_model" placeholder="logreg" value="0" checked/>
+         <br>
+         <label>SVM</label>
+         <input type="radio" id="svm" name="select_model" placeholder="svm" value="1" />
+         <br>
+         <label>KNN-3</label>
+         <input type="radio" id="knn" name="select_model" placeholder="knn" value="2" />
+         <br>
+         <label>Gaussian NB</label>
+         <input type="radio" id="gaussian" name="select_model" placeholder="gaussian" value="3"/>
+         <br>
+         <label>Random Forest</label>
+         <input type="radio" id="randomf" name="select_model" placeholder="randomf" value="4" />
+         <br>
+         <label>XGBoost</label>
+         <input type="radio" id="xgb" name="select_model" placeholder="xgb" value="5" />
+         <br>
+         <br>
+         <label for="file">Choose a CSV file for testing</label>
+         <input type="file" id="file" name="file" onchange="enableSubmitBtn();"><br><br>
+         <input type="submit" id="submitBtn" value="SUBMIT" disabled>
+         <img alt="Company Logo" title="Company Logo" src="../static/infinita_consulting_logo.png" />
+      </form>
+      </div>
+      <div id="Results", class="block_results", style="text-align: left;">
+        <br>
+        <h1>Results Report</h1>
+        <br>
+        <img src="data:image/jpeg;base64,{{ explain_img | safe }}", onerror="this.onerror=null; this.src='../static/gray.jpg'">
+        <p>{{ status_message  }}</p>
+        <a href="{{ url_for('results', path='/xls/' + hyperlink) }}">{{ hyperlink }}</a>
+      </div>
+      </div>
+      <script>
+         function enableSubmitBtn() {
+            document.getElementById('submitBtn').removeAttribute("disabled");
+         }
+      </script>
+   </body>
+</html>

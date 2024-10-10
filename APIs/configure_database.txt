@@ -1,0 +1,10 @@
+sudo -u postgres psql
+
+# In postgres shell add this:
+ALTER USER postgres PASSWORD 'newpassword';
+
+# and create the database using this
+createdb -U postgres appdb
+
+service postgresql reload
+service postgresql restart

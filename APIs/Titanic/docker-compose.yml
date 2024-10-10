@@ -7,19 +7,16 @@ services:
         depends_on:
             - backend
         volumes:
-            - ./mount/results/:/app/results/
-            - /etc/timezone:/etc/timezone:ro
-            - /etc/localtime:/etc/localtime:ro
-            - ./ids.txt:/app/ids.txt
-        entrypoint: ["/bin/sh", "./copy_values.sh"]
+            - ./results/:/app/results/
 
     backend:
         image: postgres
         volumes:
-            - ./mount/postgres/:/var/lib/postgresql/data/
+            - /var/lib/postgresql/16/:/var/lib/postgresql/data/
         environment:
             POSTGRES_USER: postgres
             POSTGRES_PASSWORD: DataBase
             POSTGRES_DB: apidb
         ports:
-            - "5432:5433"
+            - "5432:5432"
+

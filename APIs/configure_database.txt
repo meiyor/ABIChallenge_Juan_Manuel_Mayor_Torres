@@ -1,10 +1,13 @@
+# first edit this two files
+nano /etc/postgresql/16/main/pg_hba.conf # add a md5 rule on the postgres  
+
 sudo -u postgres psql
 
 # In postgres shell add this:
-ALTER USER postgres PASSWORD 'newpassword';
+ALTER USER postgres PASSWORD 'DataBase';
 
 # and create the database using this
-createdb -U postgres appdb
+createdb -U postgres apidb
 
 service postgresql reload
 service postgresql restart

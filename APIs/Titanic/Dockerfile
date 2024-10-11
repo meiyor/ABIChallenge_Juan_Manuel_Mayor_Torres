@@ -11,8 +11,12 @@ RUN apt update && apt --assume-yes install postgresql gcc python3-dev musl-dev
 
 RUN pip3 install -r requirements.txt
 
-# RUN sed -i 's/peer/md5/g' /var/lib/postgresql/data/pg_hba.conf
+# don't run this from the container side
+#RUN sed -i 's/peer/md5/g' /etc/postgresql/15/main/pg_hba.conf
 
-RUN service postgresql restart
+RUN sed -i 's/localhost/*/g' /etc/postgresql/15/main/postgresql.conf
+
+RUN service postgresql stop
+RUN service postgresql start
 
 CMD ./container_launch.sh

@@ -8,12 +8,11 @@ services:
             - backend
         volumes:
             - ./results/:/app/results/
+            - ./mounts/postgres/:/var/lib/postgresql/16/main/
+            - ./mounts/sockets/:/var/run/postgresql/
 
     backend:
         image: postgres
-        volumes:
-            - ./mounts/postgres/:/var/lib/postgresql/data/
-            - ./mounts/sockets/:/var/run/postgresql/
         environment:
             POSTGRES_USER: postgres
             POSTGRES_PASSWORD: DataBase

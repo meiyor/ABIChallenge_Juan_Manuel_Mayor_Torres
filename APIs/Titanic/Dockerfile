@@ -5,7 +5,7 @@ COPY ./requirements.txt /app
 
 WORKDIR /app
 
-RUN apt update && apt --assume-yes install postgresql gcc python3-dev musl-dev
+RUN apt update && apt --assume-yes install postgresql gcc python3-dev musl-dev sudo nano
 
 # COPY ./mounts/postgres/ /var/lib/postgresql/data/
 

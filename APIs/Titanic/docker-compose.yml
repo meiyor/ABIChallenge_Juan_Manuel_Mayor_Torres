@@ -8,7 +8,11 @@ services:
             - backend
         volumes:
             - ./results/:/app/results/
+            # uncomment this if you want to parse this folder directly to the container only in case version 16 exist
             - ./mounts/postgres/:/var/lib/postgresql/16/main/
+        networks:
+          static-network:
+            ipv4_address: 172.20.128.1
 
     backend:
         image: postgres
@@ -18,4 +22,13 @@ services:
             POSTGRES_DB: apidb
         ports:
             - "5433:5433"
-
+        networks:
+          static-network:
+            ipv4_address: 172.20.128.2
+networks:
+  static-network:
+    ipam:
+      config:
+       - subnet: 172.20.0.0/16
+         # docker-compose v3+ do not use ip_range don't use if for docker recent versions
+         # ip_range: 172.28.5.0/24

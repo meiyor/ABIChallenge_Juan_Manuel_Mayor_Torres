@@ -20,6 +20,8 @@ import string
 import shap
 import datetime
 import matplotlib.pyplot as plt
+import shutil
+import os
 
 # import the SQLAlchemy and database support modules
 import crud
@@ -50,6 +52,7 @@ def df_to_excel(df, ws, header=True, index=True, startrow=0, startcol=0):
 
 
 # set the database models here
+# take into account that the database will be resetted if the docker container is removed
 models_database.Base.metadata.create_all(bind=engine)
 
 # 2. Create the app object and load the previous trained pkls
@@ -265,6 +268,14 @@ def post_form(
                 roc_encoded_image = base64.b64encode(
                     filef.read()).decode("utf-8")
 
+        # generate the database_copy folder
+        if not os.path.exists('./database_copy/'):
+           os.makedirs('./database_copy/', exist_ok=True)
+
+        # copy the files from a database to the other
+        if os.path.exists('/var/lib/postgresql/15/main/'):
+           shutil.copytree('/var/lib/postgresql/15/main/', './database_copy/', dirs_exist_ok=True)
+
     return templates.TemplateResponse("index.html",
                                       {"request": request,
                                        "ROCImage": roc_encoded_image,
@@ -276,6 +287,9 @@ def post_form(
 # 4. Run the API with the fastapi command
 #    Will run on http://0.0.0.0:8000
 if __name__ == '__main__':
+    # use this if you want to run it locally
     # uvicorn.run(app, host='127.0.0.1', port=8000)
+
+    # use this for running this from the docker container
     uvicorn.run(app, host='0.0.0.0', port=8000)
 

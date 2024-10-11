@@ -3,7 +3,13 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 # SQLALCHEMY_DATABASE_URL = "postgresql://postgres:DataBase@localhost:5432/apidb"
+
+# use the previous command to call this locally only! Check the backend specs
+
+# SQLALCHEMY_DATABASE_URL = "postgresql://postgres/apidb"
+
 SQLALCHEMY_DATABASE_URL = "postgresql://postgres:DataBase@backend/apidb"
+# SQLALCHEMY_DATABASE_URL = "postgresql://postgres:@172.20.128.1:8000/apidb"
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)

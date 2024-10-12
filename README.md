@@ -16,12 +16,13 @@ please refer to other OS installation types here [https://docs.docker.com/deskto
 
 After you clone this repository and get the basic **Python** and **pip** **devs** on your machine, go to the **Titanic** folder and install the requirements 
 
-from **pip**
 
 ```python
 pip install -r requirements.txt
 ```
 Now before evaluating the code on the notebook you will need to install **Jupyter notebook** on you machine 
+
+from **pip**
 
 ```python
 pip install notebook
@@ -32,3 +33,28 @@ pip install notebook
 ```bash
  apt install python3-notebook jupyter jupyter-core python-ipykernel
  ```
+
+After you installed and check the **Jupyter Notebook** installation, you must add the environment to your jupyer environments, just follow the following commands in sequence and restart your machine.
+
+```bash
+ source /location_of_the_environment/myenv/bin/activate # be sure where is your environment located after you install the requirements
+ pip install ipython
+ pip install ipykernel
+ pip install bash_kernel
+
+  # setting the kernel
+ ipython kernel install --user --name=myenv
+ python -m ipykernel install --user --name=myenv
+
+ python -m bash_kernel.install
+ ```
+
+Remember to run the previous commands after you have your environment activated and deploy **Jupyter Notebook**
+
+```bash
+jupyter notebook --allow-root
+```
+
+You can change and set your environment clicking on the Kernel menu of jupyter here:
+
+![image](https://github.com/user-attachments/assets/a84dcff4-7a26-4702-9589-1cf9da53cef3)

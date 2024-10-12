@@ -248,7 +248,7 @@ def post_form(
 
             # set the status messages
             status_message = "The select model's train accuracy is: " + acc_val + \
-                '%, for ' + item.model + 'model, please refer to the result output file here: '
+                '%, for ' + item.model + ' model, please refer to the result output file here: '
             hyperlink_message = name_result_file
 
             # reading the ROC results giving by the training

@@ -184,7 +184,7 @@ def post_form(
 
             # create file with new ids to save in the database
             with open("./ids.txt", "a+") as file_ids:
-                file_ids.write(str(id))
+                file_ids.write(str(id) + '\n')
 
             # fill the database item values
             item.id = id

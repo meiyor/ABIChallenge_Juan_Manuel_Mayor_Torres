@@ -37,12 +37,14 @@ pip install notebook
 After you installed and check the **Jupyter Notebook** installation, you must add the environment to your jupyer environments, just follow the following commands in sequence and restart your machine.
 
 ```bash
+
+# activating environment
  source /location_of_the_environment/myenv/bin/activate # be sure where is your environment located after you install the requirements
  pip install ipython
  pip install ipykernel
  pip install bash_kernel
 
-  # setting the kernel
+# setting the kernel
  ipython kernel install --user --name=myenv
  python -m ipykernel install --user --name=myenv
 
@@ -57,4 +59,16 @@ jupyter notebook --allow-root
 
 You can change and set your environment clicking on the Kernel menu of jupyter here:
 
-![image](https://github.com/user-attachments/assets/a84dcff4-7a26-4702-9589-1cf9da53cef3)
+![image](https://github.com/user-attachments/assets/4f07f9a8-51d9-4519-8d65-8fb5ae737e3f)
+
+Now, you can continue with the Notebook execution.
+
+## Notebook Running (offline training)
+
+To refer the notebook file for training offline the [Titanic Kaggle Dataset](https://www.kaggle.com/code/startupsci/titanic-data-science-solutions) you can go to the following [link](https://github.com/meiyor/ABIChallenge_Juan_Manuel_Mayor_Torres/blob/main/APIs/Titanic/training_titanic_model.ipynb).
+
+After you open the .ipynb file for the Titanic API you will see the following screen.
+
+![image](https://github.com/user-attachments/assets/b9104be0-8126-4062-9e55-0714873d59f5)
+
+Then, be sure that your environment is loaded in your Jupyter IDE, and you can start running the notebook in sequence.

@@ -95,5 +95,22 @@ You can also check the ROC curve for the training metrics. In the last part of t
 
 In the final API functionality this **pkl** files are used for generating the final estimator predictions and the explainability images associated to each estimation. Each estimation can be done **for one by one input or any batch size** you want to put in the input csv files. So we can continue with the API configuration and deployment.
 
+## API local releasing
+
+First to configure the API releasing install the **postgresql** package.
+
+```bash
+apt install postgresql postgresql-*
+```
+Remember that this command will install the **postgresql** version associated to the latest (or currently installed) Linux distribution in your machine.
+
+Subsequently, you must configure the database to do queries from the **fastAPI** session. Then, you need to modify the files on this absolute paths in Ubuntu:
+
+- **/etc/postgresql/16/main/pg_hba.conf**
+- **/etc/postgresql/16/main/postgresql.conf**
+
+Take into account that this path will be different for another Linux distros, as well as for Mac and Windows. Search for the absolute locations of those files in your corresponding OS.
+
+In the **pg_hba.conf** file you must change the line 118 and change the defaul method from **peer** to **md5**.
 
 

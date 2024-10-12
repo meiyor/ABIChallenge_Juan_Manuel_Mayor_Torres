@@ -145,6 +145,23 @@ createdb -U postgres apidb;
 
 Now to finish the postgresql configuration just restart the service again. Then, you are ready to deploy the API from the local Python environment.
 
+For this you just need to run the **app.py** file from the Titanic folder inside the APIs folder, you can check the code in detail [here](https://github.com/meiyor/ABIChallenge_Juan_Manuel_Mayor_Torres/blob/main/APIs/Titanic/app.py).
+
+Before running the API locally you must uncomment this line (at the end of the file) from the app.py and point the **upload** service on the fastAPI session from the localhost IP which is in most cases the 127.0.0.1.
+
+![image](https://github.com/user-attachments/assets/74f9dab4-25ee-4f58-9024-99c7114713e6)
+
+Now you can release the app using the following command.
+
+```python
+python app.py
+```
+
+if you go to any web-browser and you type: **127.0.0.1/upload** this will appear as the front-end input.
+
+![image](https://github.com/user-attachments/assets/4616bc05-3dc2-47f4-89a5-e363396b01c7)
+
+This form receives the **username**, **password** (that can be anything for the sake of the test), 
 
 
 

@@ -54,7 +54,7 @@ After you installed and check the **Jupyter Notebook** installation, you must ad
 Remember to run the previous commands after you have your environment activated and deploy **Jupyter Notebook**
 
 ```bash
-jupyter notebook --allow-root
+jupyter notebook --allow-root # run this having your environment activated
 ```
 
 You can change and set your environment clicking on the Kernel menu of jupyter here:
@@ -71,4 +71,13 @@ After you open the .ipynb file for the Titanic API you will see the following sc
 
 ![image](https://github.com/user-attachments/assets/b9104be0-8126-4062-9e55-0714873d59f5)
 
-Then, be sure that your environment is loaded in your Jupyter IDE, and you can start running the notebook in sequence.
+Then, be sure that your environment is loaded in your Jupyter IDE, and you can start running the notebook in sequence. Take into account that this notebook **is not** exactly the same as the Kaggle repository but it has the same sequence in order to debug, remove, and include new features for the subsequent model training and saving.
+
+Here you can see a couple of snapshots of the notebook where the features has been debugged:
+
+![image](https://github.com/user-attachments/assets/e748c61c-c283-4e3c-8056-bc0fc7770a89)
+![image](https://github.com/user-attachments/assets/474ca140-1e03-44c6-8330-94e39a7ed90e)
+
+After you are sure you have executed all the data debugging cells (in sequence), then you focused on the dataframe preparation, training, and models/training releasing at the end of the notebook.
+
+

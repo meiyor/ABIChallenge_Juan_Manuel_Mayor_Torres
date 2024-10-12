@@ -157,7 +157,7 @@ Now you can release the app using the following command.
 python app.py
 ```
 
-if you go to any web-browser and you type: **127.0.0.1/upload** this will appear as the front-end input.
+if you go to any web-browser and you type: **127.0.0.1:8000/upload** this will appear as the front-end input.
 
 ![image](https://github.com/user-attachments/assets/4616bc05-3dc2-47f4-89a5-e363396b01c7)
 
@@ -224,4 +224,11 @@ Subequently, you need to run the same commmands for local **postgresql** configu
 psql -h backend -U postgres -d apidb
 ```
 
-This is **very important**, you mustr specify the **backend** name as the host that is managing the database at least for visualization or modification purposes.
+This is **very important**, you mustr specify the **backend** name as the host that is managing the database at least for visualization or modification purposes. Now going to the **0.0.0.0:8000/upload** you will see the same front-end you can see locally.
+
+After you finish running your estimators in the container you will need to update the data that is generated and not mmapped from the container, so you must run this.
+
+```bash
+save_database_locally.sh
+```
+And **done**! While you don't remove the container from **Docker** all the updated files will be intact for a next estimation. 

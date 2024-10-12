@@ -161,7 +161,9 @@ if you go to any web-browser and you type: **127.0.0.1/upload** this will appear
 
 ![image](https://github.com/user-attachments/assets/4616bc05-3dc2-47f4-89a5-e363396b01c7)
 
-This form receives the **username**, **password** (that can be anything for the sake of the test), 
+This form receives the **username**, **password** (that can be anything for the sake of the test). The left side div will show the ROC curve obtained after we run the notebook, the center part of the API contain the form objects, and the right part will contain the status message, the SHAP image associated with the estimation, and the link for the resulting **xls** files. The resulting exlainable images and xls can be seen in the [results](https://github.com/meiyor/ABIChallenge_Juan_Manuel_Mayor_Torres/tree/main/APIs/Titanic/data) folder.
+
+In the same way, and to be consistent with the input the user must define the input .csv files for estimation with the 11 features defined in the last part of the notebook for online training. Please, as user, save all the candidate inputs in the [input folder](https://github.com/meiyor/ABIChallenge_Juan_Manuel_Mayor_Torres/tree/main/APIs/Titanic/inputs). Take into account because this kaggle AI service is not providing a preliminar normalization layer, therefore, the inputs of theee csv files must contain integers representing all the features described in notebook for offline training.
 
 
 

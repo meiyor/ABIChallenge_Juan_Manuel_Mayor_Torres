@@ -111,6 +111,12 @@ Subsequently, you must configure the database to do queries from the **fastAPI**
 
 Take into account that this path will be different for another Linux distros, as well as for Mac and Windows. Search for the absolute locations of those files in your corresponding OS.
 
-In the **pg_hba.conf** file you must change the line 118 and change the defaul method from **peer** to **md5**.
+In the **pg_hba.conf** file you must change the line 118 and change the defaul method from **peer** to **md5**. 
+
+![image](https://github.com/user-attachments/assets/d0a89b51-a783-4581-888d-efc558ff88ce)
+
+And for the **postgresql.conf** you must change the line 60 uncommenting the line and changing the word  **localhost** for a *. This will allow the databse to read any IP not only the localhost.
+
+![image](https://github.com/user-attachments/assets/0029c50f-4ae6-4bdb-ab01-f940603ad1dc)
 
 

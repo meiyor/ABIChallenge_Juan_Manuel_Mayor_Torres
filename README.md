@@ -165,5 +165,14 @@ This form receives the **username**, **password** (that can be anything for the 
 
 In the same way, and to be consistent with the input the user must define the input .csv files for estimation with the 11 features defined in the last part of the notebook for online training. Please, as user, save all the candidate inputs in the [input folder](https://github.com/meiyor/ABIChallenge_Juan_Manuel_Mayor_Torres/tree/main/APIs/Titanic/inputs). Take into account because this kaggle AI service is not providing a preliminar normalization layer, therefore, the inputs of theee csv files must contain integers representing all the features described in notebook for offline training.
 
+Then after you fill all the form and the SUBMIT button is activated, you can run the API and you will obtained the following results
+
+![image](https://github.com/user-attachments/assets/0900ca76-f613-4605-b92b-50071b12e97e) 
+
+If you click the link given by the API as the estimation results you can obtain an associated xls and explainer results in the  [results](https://github.com/meiyor/ABIChallenge_Juan_Manuel_Mayor_Torres/tree/main/APIs/Titanic/data) folder.
+
+![image](https://github.com/user-attachments/assets/ffaa6f63-b3ab-4830-aee5-9da07407725b)
+
+
 
 

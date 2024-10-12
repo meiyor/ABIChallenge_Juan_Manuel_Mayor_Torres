@@ -190,16 +190,16 @@ For checking the database you must go to **psql** and run this command:
 psql -U postgres -d apidb
 ```
 
-Now being in the **psql** terminal you must run the following commands and look for the last register associated to the last estimation that will be stored in the postgresql database. In the following snapshot you can see the last database register and the variables mentioned above that defines the database such as **username**, **ID**, **code**, **date**, **model**, and the data coming from the prediction such as the predicted class in the field **prediction** and the probabilites of the prediction in the field **prediction_probability**, both np arrays. The **explainability_file** and the **results_file** names are also stored and they referenced to the same name of the file saved in the results folder.
+Now being in the **psql** terminal, you must run the following commands and look for the last register associated to the last estimation that will be stored in the postgresql database. In the following snapshot you can see the last database register and the variables mentioned above that defines the database such as **username**, **ID**, **code**, **date**, **model**, and the data coming from the prediction such as the predicted class in the field **prediction** and the probabilites of the prediction in the field **prediction_probability**, both numpy arrays. The **explainability_file** and the **results_file** names are also stored and they referenced to the same name of the file saved in the results folder.
 
 ![image](https://github.com/user-attachments/assets/ec110a11-81b2-4bc3-9bc3-b28334768a40)
 
 
-Now you can refresh the front-end page and you can run as many prediction you can for your own evaluation. Now, here are the steps to configure the **Docker** launching.
+Now you can refresh the front-end page and you can run as many prediction you can for your own evaluation. Here are, now, the steps to configure the **Docker** launching.
 
 ## API Docker
 
-Before realeasing any docker launching you need to change the final lines in the **app.py** file being different in comparison with the local execution. Like this.
+Before releasing any docker launching you need to change the final lines in the **app.py** file being different in comparison with the local execution. Like this.
 
 ![image](https://github.com/user-attachments/assets/49681f83-2eab-4bec-b976-a6215022fe4d)
 
@@ -213,7 +213,7 @@ To check the [docker-compose.yml](https://github.com/meiyor/ABIChallenge_Juan_Ma
 
 ![image](https://github.com/user-attachments/assets/4ee2ffdc-b5ba-4e10-880e-b2a77b77d3e1)
 
-**Take into account that before introducing any input for the prediction from Docker, you must do the same steps for posgresql configuration made locally, on the front_end container**. The Dockerfile can run some endpoints for doing the files edition but to create the database you must run, first, this command to access the container.
+**Take into account that before introducing any input for the prediction from Docker, you must do the same steps for posgresql configuration made locally, on the front_end container**. The Dockerfile can run some endpoints for doing the files edition, but to create the database you must run, first, this command to access the container.
 
 ```bash
 docker exec -it <container_id> bash
@@ -226,9 +226,21 @@ psql -h backend -U postgres -d apidb
 
 This is **very important**, you mustr specify the **backend** name as the host that is managing the database at least for visualization or modification purposes. Now going to the **0.0.0.0:8000/upload** you will see the same front-end you can see locally.
 
-After you finish running your estimators in the container you will need to update the data that is generated and not mmapped from the container, so you must run this.
+After you finish running your estimators in the container, you will need to update the data that is generated and not mmapped from the container, so you must run this.
 
 ```bash
 save_database_locally.sh
 ```
-And **done**! While you don't remove the container from **Docker** all the updated files will be intact for a next estimation. 
+And **done**! While you don't remove the container from **Docker** all the updated files will be intact for a next estimation, doing a docker launching with the containers already created. 
+
+## SonarCloud test
+
+This is the snapshot of the **SonarCloud** test overview. This is just for the first time I run it, I have not corrected the errors or experiment with **SonarCloud** before.
+
+![image](https://github.com/user-attachments/assets/bd295a46-e737-4079-84b8-2a6a9aa97d06)
+
+The results are very good, for being the first execution time, and without any experience on SonarCloud code static traceability. You can also use them as indicator for evaluation, so you can consider if the code validity is well enough. However, checking the results more in deep they are not really critical errors but minors that are not taken into account for the sake of the test.
+
+![image](https://github.com/user-attachments/assets/50b6d03a-0bff-471b-b856-bfc5806e57db)
+
+For a more detailed explanation of this test, you can refer to the explanatory video showing the API working live and the code details. Please go to this link to check the video in detail: [https://drive.google.com/file/d/1ydWVYnl0315_7Nx--zdCHeq24i6VwBtj/view?usp=drive_link](https://drive.google.com/file/d/1ydWVYnl0315_7Nx--zdCHeq24i6VwBtj/view?usp=drive_link). 

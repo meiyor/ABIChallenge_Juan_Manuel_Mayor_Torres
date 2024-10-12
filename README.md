@@ -190,22 +190,38 @@ For checking the database you must go to **psql** and run this command:
 psql -U postgres -d apidb
 ```
 
-Now being in the **psql** terminal you must run the following commands and look for the last register associated to the last estimation that will be stored in the postgresql database
+Now being in the **psql** terminal you must run the following commands and look for the last register associated to the last estimation that will be stored in the postgresql database. In the following snapshot you can see the last database register and the variables mentioned above that defines the database such as **username**, **ID**, **code**, **date**, **model**, and the data coming from the prediction such as the predicted class in the field **prediction** and the probabilites of the prediction in the field **prediction_probability**, both np arrays. The **explainability_file** and the **results_file** names are also stored and they referenced to the same name of the file saved in the results folder.
 
 ![image](https://github.com/user-attachments/assets/ec110a11-81b2-4bc3-9bc3-b28334768a40)
-
 
 
 Now you can refresh the front-end page and you can run as many prediction you can for your own evaluation. Now, here are the steps to configure the **Docker** launching.
 
 ## API Docker
 
-To run the docker deployment you need to first do a **docker-compose** and **build** of the image. If you go to the Titanic folder you can do it running simple the **docker_launch.sh** file as follows:
+Before realeasing any docker launching you need to change the final lines in the **app.py** file being different in comparison with the local execution. Like this.
+
+![image](https://github.com/user-attachments/assets/49681f83-2eab-4bec-b976-a6215022fe4d)
+
+
+To run the docker deployment you need to first do a **docker-compose** and **build** of the **backend** and **frontend** images. If you go to the Titanic folder you can do it running simple the **docker_launch.sh** file as follows:
 
 ```bash
 sh docker_launch.sh
 ```
-To check the [docker-compose.yml](https://github.com/meiyor/ABIChallenge_Juan_Manuel_Mayor_Torres/blob/main/APIs/Titanic/docker-compose.yml) and the [Dockerfile](https://github.com/meiyor/ABIChallenge_Juan_Manuel_Mayor_Torres/blob/main/APIs/Titanic/Dockerfile) you can go to any of these links
-
+To check the [docker-compose.yml](https://github.com/meiyor/ABIChallenge_Juan_Manuel_Mayor_Torres/blob/main/APIs/Titanic/docker-compose.yml) and the [Dockerfile](https://github.com/meiyor/ABIChallenge_Juan_Manuel_Mayor_Torres/blob/main/APIs/Titanic/Dockerfile) you can go to any of these links. Now after the **Docker** images and containers are generated you must see the following output in th console
 
 ![image](https://github.com/user-attachments/assets/4ee2ffdc-b5ba-4e10-880e-b2a77b77d3e1)
+
+**Take into account that before introducing any input for the prediction from Docker, you must do the same steps for posgresql configuration made locally, on the front_end container**. The Dockerfile can run some endpoints for doing the files edition but to create the database you must run, first, this command to access the container.
+
+```bash
+docker exec -it <container_id> bash
+```
+Subequently, you need to run the same commmands for local **postgresql** configuration in the container shell, opening the psql console like this.
+
+```bash
+psql -h backend -U postgres -d apidb
+```
+
+This is **very important**, you mustr specify the **backend** name as the host that is managing the database at least for visualization or modification purposes.

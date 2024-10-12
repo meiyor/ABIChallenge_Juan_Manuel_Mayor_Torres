@@ -119,4 +119,32 @@ And for the **postgresql.conf** you must change the line 60 uncommenting the lin
 
 ![image](https://github.com/user-attachments/assets/0029c50f-4ae6-4bdb-ab01-f940603ad1dc)
 
+After you modify this files and the corresponding please restart the **postgresql** service
+
+```bash
+service postgresql restart
+```
+
+Now, we can create the database associated to the default user **postgres** and set the password for the posgresql database. For this, we must first go to the **psql** terminal using the following command
+
+```bash
+sudo -u postgres psql
+```
+
+Next we must set the password, for this particular case, the password is **DataBase** but you can set your own password for convinience and parse it as an environment variable for security reasons. So you need to run the following command from the psql terminal.
+
+```bash
+ALTER USER postgres PASSWORD 'Password';
+```
+
+Now from outside the psql terminal, and being on your root terminal you must create the database name associated to the **postgres** like this.
+
+```bash
+createdb -U postgres apidb;
+```
+
+Now to finish the postgresql configuration just restart the service again. Then, you are ready to deploy the API from the local Python environment.
+
+
+
 

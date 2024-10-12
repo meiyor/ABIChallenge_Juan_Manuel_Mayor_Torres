@@ -178,5 +178,34 @@ if you open the resulting file in a xls reader as Excel or LibreOffice you will 
 
 ![image](https://github.com/user-attachments/assets/012fafc7-c2d5-42a3-b12f-2791f041d522)
 
-In the first column you will see the index starting from zero to the last input (feature vectors) that the user must set for estimation, in the second column you will see estimation strings that is saying if the corresponding input (or the corresponding member of the Titanic crew) **survived (1) or not (0)**, the third column . We can see for this particular example
+In the first column you will see the index starting from zero to the last input (feature vectors) that the user must set for estimation, in the second column you will see estimation strings that is saying if the corresponding input (or the corresponding member of the Titanic crew) **survived (1) or not (0)**, the third column you can see the probability of the **no survive** class, and in the fourth column you ca see the probability of the **survive** class related to the model user has selected from the front. We can see for this particular example we hace 12 input vectors for clasifying (estimating).
 
+Now after it finishes and you go to the results folder you must see the new files genearated in the result folder with the time it has been generated.
+
+![image](https://github.com/user-attachments/assets/e112ef1a-5aad-4b8d-98a9-f50750d2cd07)
+
+For checking the database you must go to **psql** and run this command:
+
+```bash
+psql -U postgres -d apidb
+```
+
+Now being in the **psql** terminal you must run the following commands and look for the last register associated to the last estimation that will be stored in the postgresql database
+
+![image](https://github.com/user-attachments/assets/ec110a11-81b2-4bc3-9bc3-b28334768a40)
+
+
+
+Now you can refresh the front-end page and you can run as many prediction you can for your own evaluation. Now, here are the steps to configure the **Docker** launching.
+
+## API Docker
+
+To run the docker deployment you need to first do a **docker-compose** and **build** of the image. If you go to the Titanic folder you can do it running simple the **docker_launch.sh** file as follows:
+
+```bash
+sh docker_launch.sh
+```
+To check the [docker-compose.yml](https://github.com/meiyor/ABIChallenge_Juan_Manuel_Mayor_Torres/blob/main/APIs/Titanic/docker-compose.yml) and the [Dockerfile](https://github.com/meiyor/ABIChallenge_Juan_Manuel_Mayor_Torres/blob/main/APIs/Titanic/Dockerfile) you can go to any of these links
+
+
+![image](https://github.com/user-attachments/assets/4ee2ffdc-b5ba-4e10-880e-b2a77b77d3e1)

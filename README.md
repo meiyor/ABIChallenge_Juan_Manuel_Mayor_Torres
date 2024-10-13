@@ -228,7 +228,7 @@ This is **very important**, you mustr specify the **backend** name as the host t
 After you finish running your estimators in the container, you will need to update the data that is generated and not mmapped from the container, so you must run this.
 
 ```bash
-save_database_locally.sh
+sh save_database_locally.sh
 ```
 And **done**! While you don't remove the container from **Docker** all the updated files will be intact for a next estimation, doing a docker launching with the containers already created. 
 

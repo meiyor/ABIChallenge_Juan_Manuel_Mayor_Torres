@@ -11,8 +11,8 @@ In This README we will describe the process for executing this API code locally 
 
 ## Configuration
 
-The first to do is to **git clone** this repository in your local machine, be sure if you install **Docker** completely on your machine. For **Ubuntu** or any related unix
-distribution, follow the steps described here [https://docs.docker.com/engine/install/ubuntu/](https://docs.docker.com/engine/install/ubuntu). If you are using Windows or Mac
+The first to do is to **git clone** this repository in your local machine. Additionally, be sure that you install **Docker** completely on your machine. For **Ubuntu** or any related unix
+distribution - follow the steps described here [https://docs.docker.com/engine/install/ubuntu/](https://docs.docker.com/engine/install/ubuntu). If you are using Windows or Mac
 please refer to other OS installation types here [https://docs.docker.com/desktop/install/windows-install/](https://docs.docker.com/desktop/install/windows-install/) and here [https://docs.docker.com/desktop/install/mac-install/](https://docs.docker.com/desktop/install/mac-install/) respectively.
 
 After you clone this repository and get the basic **Python** and **pip** **devs** on your machine, go to the **Titanic** folder and install the requirements 
@@ -115,7 +115,7 @@ In the **pg_hba.conf** file you must change the line 118 and change the defaul m
 
 ![image](https://github.com/user-attachments/assets/d0a89b51-a783-4581-888d-efc558ff88ce)
 
-And for the **postgresql.conf** you must change the line 60 uncommenting the line and changing the word  **localhost** for a *. This will allow the databse to read any IP not only the localhost.
+And for the **postgresql.conf** you must change the line 60 - uncommenting the line and changing the word  **localhost** for a * (asterisc symbol). This will allow the databse to read any IP not only the localhost.
 
 ![image](https://github.com/user-attachments/assets/0029c50f-4ae6-4bdb-ab01-f940603ad1dc)
 
@@ -142,7 +142,7 @@ Now, from outside the psql terminal, and being on your root terminal you must cr
 ```bash
 createdb -U postgres apidb;
 ```
-Yo finish the postgresql configuration just restart the service again. Then, you are ready to deploy the API from the local Python environment.
+You can finish the postgresql configuration just restarting the service again. Then, you are ready to deploy the API from the local Python environment.
 
 For this you just need to run the **app.py** file from the Titanic folder inside the APIs folder, you can check the code in detail [here](https://github.com/meiyor/ABIChallenge_Juan_Manuel_Mayor_Torres/blob/main/APIs/Titanic/app.py).
 
@@ -150,21 +150,21 @@ Before running the API locally you must uncomment this line (at the end of the f
 
 ![image](https://github.com/user-attachments/assets/74f9dab4-25ee-4f58-9024-99c7114713e6)
 
-Now you can release the app using the following command.
+Then, you can release the app using the following command.
 
 ```python
 python app.py
 ```
 
-if you go to any web-browser and you type: **127.0.0.1:8000/upload** this will appear as the front-end input.
+If you go to any web-browser and you type: **127.0.0.1:8000/upload** this will appear as the front-end input.
 
 ![image](https://github.com/user-attachments/assets/4616bc05-3dc2-47f4-89a5-e363396b01c7)
 
 This form receives the **username**, **password** (that can be anything for the sake of the test). The left side div will show the ROC curve obtained after we run the notebook, the center part of the API contain the form objects, and the right part will contain the status message, the SHAP image associated with the estimation, and the link for the resulting **xls** files. The resulting exlainable images and xls can be seen in the [results](https://github.com/meiyor/ABIChallenge_Juan_Manuel_Mayor_Torres/tree/main/APIs/Titanic/data) folder.
 
-In the same way, and to be consistent with the input the user must define the input .csv files for estimation with the 11 features defined in the last part of the notebook for online training. Please, as user, save all the candidate inputs in the [input folder](https://github.com/meiyor/ABIChallenge_Juan_Manuel_Mayor_Torres/tree/main/APIs/Titanic/inputs). Take into account because this kaggle AI service is not providing a preliminar normalization layer, therefore, the inputs of theee csv files must contain integers representing all the features described in notebook for offline training.
+In the same way, and to be consistent with the input requirements, the user must define the input .csv files for estimation with the 11 features defined in the last part of the notebook for online training. Please, as user, save all the candidate inputs in the [input folder](https://github.com/meiyor/ABIChallenge_Juan_Manuel_Mayor_Torres/tree/main/APIs/Titanic/inputs). Take into account that because this kaggle AI service is not providing a preliminar normalization layer the inputs of theese csv files must contain integers representing all the features described in notebook file for offline training - explained above.
 
-Then after you fill all the form and the SUBMIT button is activated, you can run the API and you will obtained the following results.
+Then, after you fill all the form and the SUBMIT button is activated, you can run the API and you will obtained the following results.
 
 ![image](https://github.com/user-attachments/assets/0900ca76-f613-4605-b92b-50071b12e97e) 
 
@@ -177,9 +177,9 @@ if you open the resulting file in a xls reader as Excel or LibreOffice you will 
 
 ![image](https://github.com/user-attachments/assets/012fafc7-c2d5-42a3-b12f-2791f041d522)
 
-In the first column you will see the index starting from zero to the last input (feature vectors) that the user must set for estimation, in the second column you will see estimation strings that is saying if the corresponding input (or the corresponding member of the Titanic crew) **survived (1) or not (0)**, the third column you can see the probability of the **no survive** class, and in the fourth column you ca see the probability of the **survive** class related to the model user has selected from the front. We can see for this particular example we hace 12 input vectors for clasifying (estimating).
+In the first column you will see the index starting from zero to the last input (feature vectors) that the user must set for estimation, in the second column you will see estimation strings that is saying if the corresponding input (or the corresponding member of the Titanic crew) **survived (1) or not (0)**, the third column you can see the probability of the **no survive** class, and in the fourth column you can see the probability of the **survive** class related to the model user has selected from the front. We can see for this particular example we hace 12 input vectors for clasifying (estimating).
 
-Now after it finishes and you go to the results folder you must see the new files genearated in the result folder with the time it has been generated.
+Now, after it finishes and you go to the results folder you must see the new files genearated in the result folder with the time it has been generated.
 
 ![image](https://github.com/user-attachments/assets/e112ef1a-5aad-4b8d-98a9-f50750d2cd07)
 
@@ -189,7 +189,7 @@ For checking the database you must go to **psql** and run this command:
 psql -U postgres -d apidb
 ```
 
-Now, being in the **psql** terminal, you must run the following commands and look for the last register associated to the last estimation that will be stored in the postgresql database. In the following snapshot you can see the last database register and the variables mentioned above that defines the database such as **username**, **ID**, **code**, **date**, **model**, and the data coming from the prediction such as the predicted class in the field **prediction** and the probabilites of the prediction in the field **prediction_probability**, both numpy arrays. The **explainability_file** and the **results_file** names are also stored and they referenced to the same name of the file saved in the results folder.
+Logged into the **psql** terminal, you must run the following commands and look for the last register associated to the last estimation that will be stored in the postgresql database. In the following snapshot you can see the last database register and the variables mentioned above that defines the database such as **username**, **ID**, **code**, **date**, **model**, and the data coming from the prediction such as the predicted class in the field **prediction** and the probabilites of the prediction in the field **prediction_probability**, both numpy arrays. The **explainability_file** and the **results_file** names are also stored and they referenced to the same name of the file saved in the results folder.
 
 ![image](https://github.com/user-attachments/assets/ec110a11-81b2-4bc3-9bc3-b28334768a40)
 
@@ -238,7 +238,7 @@ This is the snapshot of the **SonarCloud** test overview. This is just for the f
 
 ![image](https://github.com/user-attachments/assets/bd295a46-e737-4079-84b8-2a6a9aa97d06)
 
-The results are very good, for being the first execution time, and without any experience on SonarCloud code static traceability. You can also use them as indicator for evaluation, so you can consider if the code validity is well enough. However, checking the results more in deep they are not really critical errors but minors that are not taken into account for the sake of the test.
+The results are very good, for being the first execution trial I did in **SonarCloud**, and without any experience on **SonarCloud code static traceability**. You can also use them as an indicator for evaluation, so you can consider if the code validity is well enough. However, checking the results more in deep they are not really critical errors, but minors that are not reallhy that critical for the sake of the test. For a complete industrial release this will need to be, for sure, reviewed in detail.
 
 ![image](https://github.com/user-attachments/assets/50b6d03a-0bff-471b-b856-bfc5806e57db)
 

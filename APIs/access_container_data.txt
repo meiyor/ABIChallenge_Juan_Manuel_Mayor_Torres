@@ -1,0 +1,8 @@
+# inspect the docker container first
+# recheck the container id in case
+docker exec -it e971320ea6ff bash
+
+psql -h backend -U postgres -d apidb
+\x
+\d
+select * from "items";

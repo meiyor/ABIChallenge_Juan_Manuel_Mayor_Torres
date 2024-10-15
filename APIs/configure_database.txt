@@ -1,0 +1,16 @@
+# first edit this two files
+nano /etc/postgresql/16/main/pg_hba.conf # add a md5 rule on the postgres  
+nano /etc/postgresql/16/main/postgresql.conf # activate de listen "*" all and the desired port
+
+service postgresql restart
+
+sudo -u postgres psql
+
+# In postgres shell add this:
+ALTER USER postgres PASSWORD 'DataBase';
+
+# and create the database using this
+createdb -U postgres apidb
+
+service postgresql reload
+service postgresql restart

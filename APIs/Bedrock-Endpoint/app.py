@@ -42,7 +42,7 @@ app = Flask(__name__)
 
 # app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql+psycopg2://postgres:DataBase@localhost:5432/apidb"
 # use this configuration for docker
-# app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql+psycopg2://postgres:DataBase@backend_chatbot:5432/apidb"
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql+psycopg2://postgres:DataBase@backend_chatbot:5432/apidb"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 CORS(app)

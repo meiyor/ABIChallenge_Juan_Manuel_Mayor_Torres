@@ -1,2 +1,2 @@
-export AWS_ACCESS_KEY="AKIATBRPQQB3KJIELSVD"
-export AWS_SECRET_KEY="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"
+export AWS_ACCESS_KEY="askthem"
+export AWS_SECRET_KEY="askthem"

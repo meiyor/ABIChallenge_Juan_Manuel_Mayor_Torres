@@ -184,11 +184,7 @@ def post_form(
 
             # create file with new ids to save in the database
             with open("./ids.txt", "a+") as file_ids:
-<<<<<<< HEAD
-                file_ids.write(str(id))
-=======
                 file_ids.write(str(id) + '\n')
->>>>>>> 8832716 (Feature2)
 
             # fill the database item values
             item.id = id
@@ -252,11 +248,7 @@ def post_form(
 
             # set the status messages
             status_message = "The select model's train accuracy is: " + acc_val + \
-<<<<<<< HEAD
-                '%, for ' + item.model + 'model, please refer to the result output file here: '
-=======
                 '%, for ' + item.model + ' model, please refer to the result output file here: '
->>>>>>> 8832716 (Feature2)
             hyperlink_message = name_result_file
 
             # reading the ROC results giving by the training

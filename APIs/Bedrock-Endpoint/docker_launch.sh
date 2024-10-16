@@ -1,5 +1,6 @@
 docker-compose up;
-docker run --network="host" bedrock-endpoint_frontend_chatbot
+#uncomment this if you consider it necessary
+#docker run --network="host" bedrock-endpoint_frontend_chatbot
 
 # uncomment this if necessary...
 # cp -r /var/lib/postgresql/16/main/* ./mounts/postgres/

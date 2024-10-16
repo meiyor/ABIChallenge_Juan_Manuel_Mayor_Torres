@@ -6,6 +6,9 @@ services:
             - "8000:8000"
         depends_on:
             - backend_chatbot
+        environment:
+            - AWS_ACCESS_KEY="askthem"
+            - AWS_SECRET_KEY="askthem"
         volumes:
             # uncomment this if you want to parse this folder directly to the container only in case version 16 exist
             - ./mounts/postgres/:/var/lib/postgresql/16/main/

@@ -4,5 +4,5 @@
 set -m
 
 service postgresql restart
-sh export_credentials.sh
+source export_credentials.sh
 python app.py

@@ -247,7 +247,7 @@ For a more detailed explanation of this test, you can refer to the explanatory v
 
 ## ChatBot API
 
-In the recent commits I have added a modular chatbot API powered by Flask, SQLAlchemy, and a bedrock-runtime endpoint loading a [Claude-Sonnet 3](https://us-west-2.console.aws.amazon.com/bedrock/home?region=us-west-2#/providers?model=anthropic.claude-3-sonnet-20240229-v1:0) model from Anthropic. The steps for configuration are very similar to the initial model. Just run the following code after you are sure you have configured the postgresql database on the container.
+In the recent commits I have added a modular chatbot API powered by Flask, SQLAlchemy, and a bedrock-runtime endpoint loading a [Claude-Sonnet 3](https://us-west-2.console.aws.amazon.com/bedrock/home?region=us-west-2#/providers?model=anthropic.claude-3-sonnet-20240229-v1:0) model from Anthropic. The steps for configuration are very similar to the initial model. Just run the following code after you are sure you have configured the postgresql database on the container. You can see some ML specs and metrics of Claude-Sonnet 3 and 3.5 [here](https://www.anthropic.com/news/claude-3-5-sonnet).
 
 ```python
 python app.py

@@ -3,7 +3,7 @@ Infinita Consulting test for ML Engineer position
 
 In This README we will describe the process for executing this API code locally and through **Docker** container. The steps outline for this execution will be:
 
-- **Configuration**
+- [**Configuration**](#configuration)
 - **Notebook Running (offline training)**
 - **API local releasing**
 - **API Docker**
@@ -264,10 +264,14 @@ Here you can see the interface of the ChatBot API
 
 ![chatbot_API](https://github.com/user-attachments/assets/3946f78a-c26b-4931-805b-5cf4beece4c1)
 
+**The undefined premises and variables in js are only identified after the first time the chatbot is deployed**
 
-and the terminal output while the Docker container is running with the API loaded
+The terminal output while the Docker container is running with the API loaded
 
 ![terminal_API_running_on_docker](https://github.com/user-attachments/assets/431c465e-3133-440e-974e-40e7b1c4efaf)
+
+- **Take into account that any security issues related to database access or code generation in SonarCloud are minors and need to be reviewed for a final release**
+- **Each security correction must be following the same pushing path from feature to develop to main branches**
 
 For a detailed video running the API test refer to the following explanatory video [https://drive.google.com/file/d/10Du3PZhLgFvb9w6Pdl-MOvHh02fZpkCM/view?usp=drive_link](https://drive.google.com/file/d/10Du3PZhLgFvb9w6Pdl-MOvHh02fZpkCM/view?usp=drive_link). Don't hesitate to contact me for further details.
 

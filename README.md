@@ -4,11 +4,11 @@ Infinita Consulting test for ML Engineer position
 In This README we will describe the process for executing this API code locally and through **Docker** container. The steps outline for this execution will be:
 
 - [**Configuration**](#configuration)
-- **Notebook Running (offline training)**
-- **API local releasing**
-- **API Docker**
-- **SonarCloud test**
-- **Chatbot API**
+- [**Notebook Running (offline training)**](#notebook-running-(offline training))
+- [**API local releasing**](#api-local-releasing)
+- [**API Docker**](#api-docker)
+- [**SonarCloud test**](#sonarcloud-test)
+- [**Chatbot API**](#chatbot-api)
   
 ## Configuration
 

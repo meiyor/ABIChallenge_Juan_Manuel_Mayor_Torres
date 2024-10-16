@@ -243,4 +243,3 @@ The results are very good, for being the first execution trial I did in **SonarC
 ![image](https://github.com/user-attachments/assets/50b6d03a-0bff-471b-b856-bfc5806e57db)
 
 For a more detailed explanation of this test, you can refer to the explanatory video showing the API working live and the code details. Please go to this link to check the video in detail: [https://drive.google.com/file/d/1ydWVYnl0315_7Nx--zdCHeq24i6VwBtj/view?usp=drive_link](https://drive.google.com/file/d/1ydWVYnl0315_7Nx--zdCHeq24i6VwBtj/view?usp=drive_link). 
-

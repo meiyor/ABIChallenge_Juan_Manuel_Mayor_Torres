@@ -108,7 +108,7 @@ def predict(item=Item, db=db):
               "accept": "application/json",
               "body": json.dumps({
               "anthropic_version": "bedrock-2023-05-31",
-              "max_tokens": 100,
+              "max_tokens": 5000,
               "messages": [
                   {
                   "role": "user",
@@ -141,7 +141,7 @@ def predict(item=Item, db=db):
               "accept": "application/json",
               "body": json.dumps({
               "anthropic_version": "bedrock-2023-05-31",
-              "max_tokens": 100,
+              "max_tokens": 5000,
               "messages": [
                   {
                   "role": "user",

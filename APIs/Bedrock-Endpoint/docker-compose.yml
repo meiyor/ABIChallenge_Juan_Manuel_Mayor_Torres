@@ -1,0 +1,36 @@
+version: "3.9"
+services:
+    frontend_chatbot:
+        build: .
+        ports:
+            - "8000:8000"
+        depends_on:
+            - backend_chatbot
+        environment:
+            - AWS_ACCESS_KEY="askthem"
+            - AWS_SECRET_KEY="askthem"
+        volumes:
+            # uncomment this if you want to parse this folder directly to the container only in case version 16 exist
+            - ./mounts/postgres/:/var/lib/postgresql/16/main/
+        networks:
+          static-network:
+            ipv4_address: 172.28.128.16
+
+    backend_chatbot:
+        image: postgres
+        environment:
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: DataBase
+            POSTGRES_DB: apidb
+        ports:
+            - "5433:5433"
+        networks:
+          static-network:
+            ipv4_address: 172.28.128.15
+networks:
+  static-network:
+    ipam:
+      config:
+       - subnet: 172.28.0.0/16
+         # docker-compose v3+ do not use ip_range don't use if for docker recent versions
+         # ip_range: 172.28.5.0/24

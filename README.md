@@ -272,6 +272,7 @@ The terminal output while the Docker container is running with the API loaded
 
 - **Take into account that any security issues related to database access or code generation in SonarCloud are minors and need to be reviewed for a final release**
 - **Each security correction must be following the same pushing path from feature to develop to main branches**
+- **The design is modular enough! It is possible to use the same files distribution of any API described here, and any FastAPI or Flask objects/sessions declarations included here to modify the input type. Thus, any new type of API can be deployed and evaluated using this same setup.** 
 
 For a detailed video running the API test refer to the following explanatory video [https://drive.google.com/file/d/10Du3PZhLgFvb9w6Pdl-MOvHh02fZpkCM/view?usp=drive_link](https://drive.google.com/file/d/10Du3PZhLgFvb9w6Pdl-MOvHh02fZpkCM/view?usp=drive_link). Don't hesitate to contact me for further details.
 

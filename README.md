@@ -4,7 +4,7 @@ Infinita Consulting test for ML Engineer position
 In This README we will describe the process for executing this API code locally and through **Docker** container. The steps outline for this execution will be:
 
 - [**Configuration**](#configuration)
-- [**Notebook Running (offline training)**](#notebook-running-(offline training))
+- [**Notebook Running (offline training)**](#notebook-running)
 - [**API local releasing**](#api-local-releasing)
 - [**API Docker**](#api-docker)
 - [**SonarCloud test**](#sonarcloud-test)
@@ -65,7 +65,7 @@ You can change and set your environment clicking on the Kernel menu of jupyter h
 
 Now, you can continue with the Notebook execution.
 
-## Notebook Running (offline training)
+## Notebook Running
 
 To refer the notebook file for training offline the [Titanic Kaggle Dataset](https://www.kaggle.com/code/startupsci/titanic-data-science-solutions) you can go to the following [link](https://github.com/meiyor/ABIChallenge_Juan_Manuel_Mayor_Torres/blob/main/APIs/Titanic/training_titanic_model.ipynb).
 

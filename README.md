@@ -8,7 +8,8 @@ In This README we will describe the process for executing this API code locally 
 - **API local releasing**
 - **API Docker**
 - **SonarCloud test**
-
+- **Chatbot API**
+  
 ## Configuration
 
 The first to do is to **git clone** this repository in your local machine. Additionally, be sure that you install **Docker** completely on your machine. For **Ubuntu** or any related unix
@@ -243,3 +244,25 @@ The results are very good, for being the first execution trial I did in **SonarC
 ![image](https://github.com/user-attachments/assets/50b6d03a-0bff-471b-b856-bfc5806e57db)
 
 For a more detailed explanation of this test, you can refer to the explanatory video showing the API working live and the code details. Please go to this link to check the video in detail: [https://drive.google.com/file/d/1ydWVYnl0315_7Nx--zdCHeq24i6VwBtj/view?usp=drive_link](https://drive.google.com/file/d/1ydWVYnl0315_7Nx--zdCHeq24i6VwBtj/view?usp=drive_link). 
+
+## ChatBot API
+
+In the recent commits I have added a modular chatbot API powered by Flask, SQLAlchemy, and a bedrock-runtime endpoint loading a [Claude-Sonnet 3](https://us-west-2.console.aws.amazon.com/bedrock/home?region=us-west-2#/providers?model=anthropic.claude-3-sonnet-20240229-v1:0) model from Anthropic. The steps for configuration are very similar to the initial model. Just run the following code after you are sure you have configured the postgresql database on the container.
+
+```python
+python app.py
+```
+
+Here you can see the interface of the ChatBot API 
+
+
+![chatbot_API](https://github.com/user-attachments/assets/3946f78a-c26b-4931-805b-5cf4beece4c1)
+
+
+and the terminal output while the Docker container is running with the API loaded
+
+![terminal_API_running_on_docker](https://github.com/user-attachments/assets/431c465e-3133-440e-974e-40e7b1c4efaf)
+
+For a detailed video running the API test refer to the following explanatory video [https://drive.google.com/file/d/10Du3PZhLgFvb9w6Pdl-MOvHh02fZpkCM/view?usp=drive_link](https://drive.google.com/file/d/10Du3PZhLgFvb9w6Pdl-MOvHh02fZpkCM/view?usp=drive_link). Don't hesitate to contact me for further details.
+
+

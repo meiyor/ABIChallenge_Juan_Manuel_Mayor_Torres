@@ -253,6 +253,12 @@ In the recent commits I have added a modular chatbot API powered by Flask, SQLAl
 python app.py
 ```
 
+or you can run the docker container directly using - from scratch or being the container already build using this
+
+```bash
+sh docker_launch.sh
+```
+
 Here you can see the interface of the ChatBot API 
 
 

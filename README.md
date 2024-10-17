@@ -247,7 +247,7 @@ For a more detailed explanation of this test, you can refer to the explanatory v
 
 ## ChatBot API
 
-In the recent commits I have added a modular chatbot API powered by Flask, SQLAlchemy, and a bedrock-runtime endpoint loading a [Claude-Sonnet 3](https://us-west-2.console.aws.amazon.com/bedrock/home?region=us-west-2#/providers?model=anthropic.claude-3-sonnet-20240229-v1:0) model from Anthropic. The steps for configuration are very similar to the initial model. Just run the following code after you are sure you have configured the postgresql database on the container. You can see some ML specs and metrics of Claude-Sonnet 3 and 3.5 [here](https://www.anthropic.com/news/claude-3-5-sonnet).
+In the recent commits I have added a modular chatbot API powered by Flask, SQLAlchemy, and a bedrock-runtime endpoint that loads a [Claude-Sonnet 3](https://us-west-2.console.aws.amazon.com/bedrock/home?region=us-west-2#/providers?model=anthropic.claude-3-sonnet-20240229-v1:0) model from Anthropic. The steps for configuration are very similar to the initial model. Just run the following code after you are sure you have configured the postgresql database on the container. You can see some ML specs and metrics of Claude-Sonnet 3 and 3.5 [here](https://www.anthropic.com/news/claude-3-5-sonnet).
 
 ```python
 python app.py
@@ -261,10 +261,9 @@ sh docker_launch.sh
 
 Here you can see the interface of the ChatBot API 
 
-
 ![chatbot_API](https://github.com/user-attachments/assets/3946f78a-c26b-4931-805b-5cf4beece4c1)
 
-**The undefined premises and variables in js are only identified after the first time the chatbot is deployed**
+**The undefined premises and variables in js are only identified after the first time the chatbot is deployed.**
 
 The terminal output while the Docker container is running with the API loaded
 
@@ -272,7 +271,8 @@ The terminal output while the Docker container is running with the API loaded
 
 - **Take into account that any security issues related to database access or code generation in SonarCloud are minors and need to be reviewed for a final release.**
 - **Each security correction must be following the same pushing path from feature to develop to main branches.**
-- **The design is modular enough! It is possible to use the same files distribution of any API described here, and any FastAPI or Flask objects/sessions declarations included here to modify the input type. Thus, any new type of API can be deployed and evaluated using this same setup.** 
+- **This API can be adjusted to call any other model from AWS Bedrock that can be available on your AWS account. Please refer to the right snippet of code to do the correspoding end-point invoking.**
+- **The design is modular enough! It is possible to use the same files distribution of any API described here, and any FastAPI or Flask objects/sessions declarations included here to modify the input type. Thus, any new type of API can be deployed and evaluated using this same code setup.** 
 
 For a detailed video running the API test refer to the following explanatory video [https://drive.google.com/file/d/10Du3PZhLgFvb9w6Pdl-MOvHh02fZpkCM/view?usp=drive_link](https://drive.google.com/file/d/10Du3PZhLgFvb9w6Pdl-MOvHh02fZpkCM/view?usp=drive_link). Don't hesitate to contact me for further details.
 
